@@ -24,3 +24,33 @@ table {
             padding: 10px;
             text-align: center;
 }
+
+.squareGrey {
+  height: 50px;
+  width: 50px;
+  background-color: #555;
+}
+
+.squarePink {
+  height: 50px;
+  width: 50px;
+  background-color: pink;
+}
+
+.squarePurple {
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+}
+
+.squareGreen {
+  height: 50px;
+  width: 50px;
+  background-color: green;
+}
+
+.squareRed {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
