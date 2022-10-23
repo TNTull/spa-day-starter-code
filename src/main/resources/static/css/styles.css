@@ -25,32 +25,32 @@ table {
             text-align: center;
 }
 
-.squareGrey {
-  height: 50px;
-  width: 50px;
-  background-color: #555;
+.squareBlack {
+  height: 30px;
+  width: 30px;
+  background-color: #000000;
 }
 
 .squarePink {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   background-color: pink;
 }
 
 .squarePurple {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   background-color: purple;
 }
 
 .squareGreen {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   background-color: green;
 }
 
 .squareRed {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   background-color: red;
 }
