@@ -1,3 +1,6 @@
+<!--Teresa Tull worked on this on 10-22-2022 java ch 13 studio in class-->
+<!--Teresa Tull worked on this on 10-24-2022 java ch 14 studio in class-->
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th = "http://www.thymeleaf.org/">
 <head>
@@ -9,47 +12,77 @@
 <h1>My Super Fancy Spa</h1>
 <div id = "clientProfile">
     <h2>My profile</h2>
-    <p th:text= "${name}"> </p>
-    <p th:text= "${skintype}"> </p>
-    <p th:text= "${manipedi}"> </p>
+
+    <!--    from Tom in class studio review-->
+    <p th:text = "${client.skinType}"></p>
+    <p th:text = "${client.nailService}"></p>
+
+    <!--    from Becs in studio-->
+<!--    <p th:text= "${name}"> </p>-->
+<!--    <p th:text= "${skintype}"> </p>-->
+<!--    <p th:text= "${manipedi}"> </p>-->
 </div>
 <div id = "servicesMenu">
-    <table>
-        <tr>
-            <th>Available Facials</th>
-        </tr>
-        <th:block th:each="facial: ${appropriateFacials}">
-            <tr>
-                <td th:text="${facial}"></td>
-            </tr>
-        </th:block>
-    </table>
 
-    <div th:if="${manipedi.equals('manicure')}">
-        <h3>Manicure</h3>
-        <p th:replace = "fragments :: manicureDescription"></p>
+    <!--from ch 14-->
+    <h2>Menu of Available Services</h2>
+    <div>
+        <h3>Facial Treatments</h3>
+        <p>The below facial treatments are recommended by our estheticians for your given skin type.</p>
+        <table>
+            <th:block th:each = "facial : ${client.appropriateFacials}">
+                <tr>
+                    <td th:text = "${facial}"></td>
+                </tr>
+            </th:block>
+        </table>
     </div>
-
-    <div th:if="${manipedi.equals('pedicure')}">
+    <div th:if = "${client.nailService == 'manicure'}">
+        <h3>Manicure</h3>
+        <p th:replace =  "fragments :: manicureDescription"></p>
+    </div>
+    <div th:if = "${client.nailService == 'pedicure'}">
         <h3>Pedicure</h3>
         <p th:replace = "fragments :: pedicureDescription"></p>
     </div>
-    <div th:if="${manipedi.equals('both')}">
-        <h3>Both</h3>
-        <p th:replace = "fragments :: manicureDescription"></p>
-        <p th:replace = "fragments :: pedicureDescription"></p>
-    </div>
-</div>
 
+    <!--    from ch 13-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>Available Facials</th>-->
+<!--        </tr>-->
+<!--        <th:block th:each="facial: ${appropriateFacials}">-->
+<!--            <tr>-->
+<!--                <td th:text="${facial}"></td>-->
+<!--            </tr>-->
+<!--        </th:block>-->
+<!--    </table>-->
+
+<!--    <div th:if="${manipedi.equals('manicure')}">-->
+<!--        <h3>Manicure</h3>-->
+<!--        <p th:replace = "fragments :: manicureDescription"></p>-->
+<!--    </div>-->
+
+<!--    <div th:if="${manipedi.equals('pedicure')}">-->
+<!--        <h3>Pedicure</h3>-->
+<!--        <p th:replace = "fragments :: pedicureDescription"></p>-->
+<!--    </div>-->
+<!--    <div th:if="${manipedi.equals('both')}">-->
+<!--        <h3>Both</h3>-->
+<!--        <p th:replace = "fragments :: manicureDescription"></p>-->
+<!--        <p th:replace = "fragments :: pedicureDescription"></p>-->
+<!--    </div>-->
+</div>
 </body>
-<footer>
-    <div>
-        <h3>Available Nail Polish Colors</h3>
-        <div class="squareBlack"></div>
-        <div class="squareGreen"></div>
-        <div class="squarePink"></div>
-        <div class="squarePurple"></div>
-        <div class="squareRed"></div>
-    </div>
-</footer>
+<!--<footer>-->
+<!--    <div>-->
+<!--        <h3>Available Nail Polish Colors</h3>-->
+<!--        <div class="squareBlack"></div>-->
+<!--        <div class="squareGreen"></div>-->
+<!--        <div class="squarePink"></div>-->
+<!--        <div class="squarePurple"></div>-->
+<!--        <div class="squareRed"></div>-->
+<!--    </div>-->
+<!--</footer>-->
+
 </html>
